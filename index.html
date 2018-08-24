@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<h2>数据绑定</h2>
+		<div id="app">
+			{{ message }}
+			<hr />
+			<input type="text" v-model="message" />
+		</div>
+
+		<hr />
+		<h2>组件化</h2>
+		<div id="cm">
+			<!--自定义html-->
+			<message content='hello world'></message>
+		</div>
+
+		<hr />
+		<h2>模板：</h2>
+		<script id="tpl" type="text/x-handlebars-template">
+			<div class="wrapper">
+				<div class="tpl">
+					tpl - 1
+				</div>
+
+				<div class="tpl">
+					tpl - 2
+				</div>
+			</div>
+		</script>
+		
+		<hr />
+		<h2>数据：</h2>
+		<div id="my-data">
+			<p>{{a}}</p>
+			<p>{{b.x}}</p>
+		</div>
+		
+		<hr />
+		<h2>组件</h2>
+		<div id="mycomponent">
+				<my-component title='my-title' content='my-content'></my-component>
+		</div>
+	
+		<hr />
+		<h2>方法：</h2>
+		<div id="button">
+			<button v-on:click="alert">alert</button>
+		</div>
+		
+	</body>
+
+	<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/index.js" /></script>
+
+</html>
