@@ -3,7 +3,9 @@ var app = new Vue({
 	el: '#app',
 	data: {
 		message: 'Hello Vue!'
-	}
+	},
+//	将 {{...}} 修改为 ${}
+	delimiters: ['${', '}']
 })
 
 //组件化
