@@ -9,9 +9,11 @@
 	<body>
 		<h2>数据绑定</h2>
 		<div id="app">
-			${message}
+			${ message | uppercase}
+
 			<hr />
 			<input type="text" v-model="message" />
+			<div v-bind:id="'id-' + message "></div>
 		</div>
 
 		<hr />
@@ -34,26 +36,38 @@
 				</div>
 			</div>
 		</script>
-		
+
 		<hr />
 		<h2>数据：</h2>
 		<div id="my-data">
 			<p>{{a}}</p>
 			<p>{{b.x}}</p>
 		</div>
-		
+
 		<hr />
 		<h2>组件</h2>
 		<div id="mycomponent">
-				<my-component title='my-title' content='my-content'></my-component>
+			<my-component title='my-title' content='my-content'></my-component>
 		</div>
-	
+
 		<hr />
 		<h2>方法：</h2>
 		<div id="button">
 			<button v-on:click="alert">alert</button>
 		</div>
+
+		<hr />
+		<h2>计算属性 demo1</h2>
+		<div id="computed">
+			{{ firstName}} <br /> {{ lastName}} <br /> {{ fullName}} <br /> 
+		</div>
 		
+		<hr />
+		
+		<h2>计算属性 demo2</h2>
+		<div id="computer-2">
+			<p>&yen;{{price}}</p> 
+		</div> 
 	</body>
 
 	<!-- 开发环境版本，包含了有帮助的命令行警告 -->

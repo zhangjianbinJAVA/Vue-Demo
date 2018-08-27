@@ -61,3 +61,36 @@ var vm_4 = new Vue({
 		}
 	}
 })
+
+// 计算属性 demo1
+var vm_5 = new Vue({
+	el:'#computed',
+	data:{
+		firstName:'Gavin',
+		lastName:'Cly'
+	},
+	computed:{
+		fullName:function(){
+			//this 指向 vm_5
+			return this.firstName +' '+ this.lastName
+		}
+	}
+})
+
+// 计算属性 demo2
+var vm_6=new Vue({
+	el:'#computer-2',
+	data:{
+		cents:100 // 后端数据分
+	},
+	computed:{
+		price:{ // price 前端展示和更新的数据
+			set:function(newVlue){
+				this.cents=newVlue*100; //前端数据更新值后，元转为分
+			},
+			get:function(){
+				return (this.cents /100).toFixed(2); //后端数据分 转换 为元
+			}
+		}
+	}
+})
